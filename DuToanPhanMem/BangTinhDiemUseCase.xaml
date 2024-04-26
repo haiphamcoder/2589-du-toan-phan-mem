@@ -1,0 +1,117 @@
+﻿<Window x:Class="DuToanPhanMem.BangTinhDiemUseCase"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converter="clr-namespace:DuToanPhanMem.Converter"
+        mc:Ignorable="d"
+        Title="Bảng tính điểm Use Case" Height="650" Width="600"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Closing="Window_Closing">
+    <Window.Resources>
+        <converter:LongConverter x:Key="LongCv"></converter:LongConverter>
+        <converter:FloatConverter x:Key="FloatCv"></converter:FloatConverter>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20px"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20px"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10px"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20px"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20px"/>
+            <ColumnDefinition Width="60px"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="120px"/>
+            <ColumnDefinition Width="10px"/>
+            <ColumnDefinition Width="120px"/>
+            <ColumnDefinition Width="20px"/>
+        </Grid.ColumnDefinitions>
+        
+        <TextBlock TextWrapping="WrapWithOverflow" Grid.ColumnSpan="7" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold">
+            Bảng tính toán điểm các trường hợp sử dụng
+        </TextBlock>
+
+        <Label Content="TT" Grid.Row="3" Grid.Column="1" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+        <Label Content="Loại" Grid.Row="3" Grid.Column="2" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+        <Label Content="Số Use Case" Grid.Row="3" Grid.Column="3" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+        <Label Content="Điểm" Grid.Row="3" Grid.Column="5" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+
+        <Label Content="1" Grid.Row="4" Grid.Column="1" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+        <Label Content="B" Grid.Row="4" Grid.Column="2" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+        <TextBox Text="{Binding Path=TongSoB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" FontWeight="Bold" IsReadOnly="True"></TextBox>
+        <TextBox Text="{Binding Path=TongDiemB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="4" Grid.Column="5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" FontWeight="Bold" IsReadOnly="True"></TextBox>
+
+
+        <Label Content="Đơn giản" Grid.Row="5" Grid.Column="2" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Text="{Binding Path=SoBDonGian, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="5" Grid.Column="3" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DiemBDonGian, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="5" Grid.Column="5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
+
+        <Label Content="Trung bình" Grid.Row="6" Grid.Column="2" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Text="{Binding Path=SoBTrungBinh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="6" Grid.Column="3" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DiemBTrungBinh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="6" Grid.Column="5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
+
+        <Label Content="Phức tạp" Grid.Row="7" Grid.Column="2" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Text="{Binding Path=SoBPhucTap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="7" Grid.Column="3" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DiemBPhucTap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="7" Grid.Column="5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
+
+        <Label Content="2" Grid.Row="8" Grid.Column="1" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+        <Label Content="M" Grid.Row="8" Grid.Column="2" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+        <TextBox Text="{Binding Path=TongSoM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="8" Grid.Column="3" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" FontWeight="Bold" IsReadOnly="True"></TextBox>
+        <TextBox Text="{Binding Path=TongDiemM, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="8" Grid.Column="5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" FontWeight="Bold" IsReadOnly="True"></TextBox>
+
+        <Label Content="Đơn giản" Grid.Row="9" Grid.Column="2" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Text="{Binding Path=SoMDonGian, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="9" Grid.Column="3" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DiemMDonGian, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="9" Grid.Column="5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
+
+        <Label Content="Trung bình" Grid.Row="10" Grid.Column="2" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Text="{Binding Path=SoMTrungBinh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="10" Grid.Column="3" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DiemMTrungBinh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="10" Grid.Column="5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
+
+        <Label Content="Phức tạp" Grid.Row="11" Grid.Column="2" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Text="{Binding Path=SoMPhucTap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="11" Grid.Column="3" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DiemMPhucTap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="11" Grid.Column="5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
+
+        <Label Content="3" Grid.Row="12" Grid.Column="1" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+        <Label Content="T" Grid.Row="12" Grid.Column="2" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+        <TextBox Text="{Binding Path=TongSoT, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="12" Grid.Column="3" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" FontWeight="Bold" IsReadOnly="True"></TextBox>
+        <TextBox Text="{Binding Path=TongDiemT, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="12" Grid.Column="5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" FontWeight="Bold" IsReadOnly="True"></TextBox>
+
+        <Label Content="Đơn giản" Grid.Row="13" Grid.Column="2" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Text="{Binding Path=SoTDonGian, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="13" Grid.Column="3" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DiemTDonGian, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="13" Grid.Column="5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
+
+        <Label Content="Trung bình" Grid.Row="14" Grid.Column="2" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Text="{Binding Path=SoTTrungBinh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="14" Grid.Column="3" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DiemTTrungBinh, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="14" Grid.Column="5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
+
+        <Label Content="Phức tạp" Grid.Row="15" Grid.Column="2" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBox Text="{Binding Path=SoTPhucTap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="15" Grid.Column="3" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DiemTPhucTap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="15" Grid.Column="5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
+
+        <Label Content="Cộng 1+2+3" Grid.Row="16" Grid.Column="2" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+        <Label Content="TBF" Grid.Row="16" Grid.Column="3" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+        <TextBox Text="{Binding Path=TBF, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="16" Grid.Column="5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" FontWeight="Bold" IsReadOnly="True"></TextBox>
+
+        <Button Name="BtnNext" Content="Tiếp theo" Click="BtnNext_OnClick" Grid.Column="5" Grid.Row="18" FontSize="16" Height="30" HorizontalAlignment="Stretch"></Button>
+    </Grid>
+</Window>
