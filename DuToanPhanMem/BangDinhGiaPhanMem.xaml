@@ -6,7 +6,7 @@
         xmlns:converter="clr-namespace:DuToanPhanMem.Converter"
         mc:Ignorable="d"
         Title="Bảng định giá phần mềm" Height="600" Width="700"
-        WindowStartupLocation="CenterOwner"
+        WindowStartupLocation="CenterScreen"
         Closing="Window_Closing" >
     <Window.Resources>
         <converter:LongConverter x:Key="LongCv"></converter:LongConverter>

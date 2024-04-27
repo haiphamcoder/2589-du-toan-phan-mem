@@ -7,7 +7,7 @@
         xmlns:converter="clr-namespace:DuToanPhanMem.Converter"
         mc:Ignorable="d"
         Title="Bảng tính điểm tác nhân" Height="500" Width="650"
-        WindowStartupLocation="CenterOwner"
+        WindowStartupLocation="CenterScreen"
         Closing="Window_Closing">
     <Window.Resources>
         <converter:LongConverter x:Key="LongCv"></converter:LongConverter>

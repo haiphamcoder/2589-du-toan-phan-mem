@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Bảng tính điểm Use Case" Height="650" Width="600"
         ResizeMode="NoResize"
-        WindowStartupLocation="CenterOwner"
+        WindowStartupLocation="CenterScreen"
         Closing="Window_Closing">
     <Window.Resources>
         <converter:LongConverter x:Key="LongCv"></converter:LongConverter>

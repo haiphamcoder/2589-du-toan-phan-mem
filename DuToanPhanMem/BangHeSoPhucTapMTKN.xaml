@@ -6,7 +6,7 @@
         xmlns:converter="clr-namespace:DuToanPhanMem.Converter"
         mc:Ignorable="d"
         Title="Bảng hệ số phức tạp MT-KN" Height="700" Width="950"
-        WindowStartupLocation="CenterOwner"
+        WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Closing="Window_Closing">
     <Window.Resources>
