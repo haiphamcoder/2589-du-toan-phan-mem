@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -7,7 +6,7 @@ using JetBrains.Annotations;
 
 namespace DuToanPhanMem.Model
 {
-    public class HeSoPhucTapKTCN:INotifyPropertyChanged
+    public class HeSoPhucTapKTCN : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -17,20 +16,14 @@ namespace DuToanPhanMem.Model
 
         private float _tfw;
         private float _tcf;
-        
-
-        private static readonly float TOLERANCE = 0.05f;
 
         public ObservableCollection<HeSoKT> DS
         {
             get { return _ds; }
-            set {
-                if (this._ds != value)
-                {
-                    this._ds = value;
-                    OnPropertyChanged("DS");
-                          
-                }
+            set
+            {
+                this._ds = value;
+                OnPropertyChanged("DS");
             }
         }
 
@@ -39,12 +32,9 @@ namespace DuToanPhanMem.Model
             get { return _tcf; }
             set
             {
-                if (Math.Abs(this._tcf - value) > TOLERANCE)
-                {
-                    this._tcf = value;
-                    OnPropertyChanged("TCF");
-                    _gt.TCF = value;
-                }
+                this._tcf = value;
+                OnPropertyChanged("TCF");
+                _gt.TCF = value;
             }
         }
 
@@ -53,21 +43,16 @@ namespace DuToanPhanMem.Model
             get { return _tfw; }
             set
             {
-                if (Math.Abs(this._tfw - value) > TOLERANCE)
-                {
-                    this._tfw = value;
-                    OnPropertyChanged("TFW");
-                }
+                this._tfw = value;
+                OnPropertyChanged("TFW");
             }
         }
-
-        
 
         public HeSoPhucTapKTCN(GiaTriPhanMem gt)
         {
             _gt = gt;
             HeSoKT.hs = this;
-            DS.Add(new HeSoKT(0,0,0));
+            DS.Add(new HeSoKT(0, 0, 0));
             DS.Add(new HeSoKT(1, 0, 0));
             DS.Add(new HeSoKT(2, 0, 0));
             DS.Add(new HeSoKT(3, 0, 0));
@@ -80,7 +65,6 @@ namespace DuToanPhanMem.Model
             DS.Add(new HeSoKT(10, 0, 0));
             DS.Add(new HeSoKT(11, 0, 0));
             DS.Add(new HeSoKT(12, 0, 0));
-
         }
 
 
@@ -102,13 +86,13 @@ namespace DuToanPhanMem.Model
         }
     }
 
-    public partial class HeSoKT:INotifyPropertyChanged
+    public partial class HeSoKT : INotifyPropertyChanged
     {
         public static HeSoPhucTapKTCN hs;
         private int _chiSo;
         private int _xepHang;
         private float _ketQua;
-        
+
         private static readonly float TOLERANCE = 0.05f;
 
         public int ChiSo
@@ -122,13 +106,10 @@ namespace DuToanPhanMem.Model
             get { return _xepHang; }
             set
             {
-                if (this._xepHang != value)
-                {
-                    this._xepHang = value;
-                    OnPropertyChanged(nameof(XepHang));
-                    TinhKetQua();
-                    hs.TinhTCF();
-                }
+                this._xepHang = value;
+                OnPropertyChanged(nameof(XepHang));
+                TinhKetQua();
+                hs.TinhTCF();
             }
         }
 
@@ -137,15 +118,12 @@ namespace DuToanPhanMem.Model
             get { return _ketQua; }
             set
             {
-                if (Math.Abs(this._ketQua - value) > TOLERANCE)
-                {
-                    this._ketQua = value;
-                    OnPropertyChanged(nameof(KetQua));
-                }
+                this._ketQua = value;
+                OnPropertyChanged(nameof(KetQua));
             }
         }
 
-        
+
 
         public HeSoKT(int chiso, int xephang, float ketqua)
         {
@@ -154,7 +132,7 @@ namespace DuToanPhanMem.Model
             KetQua = ketqua;
         }
 
-        
+
 
         public void TinhKetQua()
         {

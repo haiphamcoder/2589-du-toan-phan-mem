@@ -1,19 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
+﻿using System.ComponentModel;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using DuToanPhanMem.Model;
 
 namespace DuToanPhanMem
@@ -62,12 +50,14 @@ namespace DuToanPhanMem
             nextWindow.window2.CanClose = true;
             nextWindow.window3.CanClose = true;
             nextWindow.window4.CanClose = true;
+            nextWindow.window5.CanClose = true;
             nextWindow.CanClose = true;
 
             nextWindow.window1.Close();
             nextWindow.window2.Close();
             nextWindow.window3.Close();
             nextWindow.window4.Close();
+            nextWindow.window5.Close();
             nextWindow.Close();
             base.OnClosing(e);
         }

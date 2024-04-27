@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
+﻿using System.ComponentModel;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using DuToanPhanMem.Model;
 
 namespace DuToanPhanMem
@@ -30,6 +19,7 @@ namespace DuToanPhanMem
         public BangTinhDiemUseCase window2;
         public BangHeSoPhucTapKTCN window3;
         public BangHeSoPhucTapMTKN window4;
+        public BangTinhLuongBinhQuan window5;
 
         public bool CanClose { get; set; }
         public BangDinhGiaPhanMem()
@@ -49,6 +39,7 @@ namespace DuToanPhanMem
             window2 = new BangTinhDiemUseCase(this);
             window3 = new BangHeSoPhucTapKTCN(this);
             window4 = new BangHeSoPhucTapMTKN(this);
+            window5 = new BangTinhLuongBinhQuan(this);
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
@@ -77,6 +68,11 @@ namespace DuToanPhanMem
         private void HlEF_OnClick(object sender, RoutedEventArgs e)
         {
             window4.Show();
+        }
+
+        private void HlE_OnClick(object sender, RoutedEventArgs e)
+        {
+            window5.Show();
         }
 
         private void BtnNext_OnClick(object sender, RoutedEventArgs e)

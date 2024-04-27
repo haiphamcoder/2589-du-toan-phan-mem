@@ -6,6 +6,8 @@
         xmlns:converter="clr-namespace:DuToanPhanMem.Converter"
         mc:Ignorable="d"
         Title="Bảng hệ số phức tạp MT-KN" Height="700" Width="950"
+        WindowStartupLocation="CenterOwner"
+        WindowState="Maximized"
         Closing="Window_Closing">
     <Window.Resources>
         <converter:LongConverter x:Key="LongCv"></converter:LongConverter>
@@ -79,7 +81,7 @@
             Có áp dụng qui trình phát triển phần mềm theo mẫu RUP và có hiểu biết về RUP hoặc quy trình phát triển phần mềm tương đương
         </TextBlock>
         <Label Content="1,5" Grid.Row="6" Grid.Column="4" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox Text="{Binding Path=DS[0].XepHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="6" Grid.Column="6" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DS[0].XepHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="6" Grid.Column="6" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
         <TextBox Text="{Binding Path=DS[0].KetQua, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" Grid.Row="6" Grid.Column="8" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
         <TextBox Text="{Binding Path=DS[0].KinhNghiem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" Grid.Row="6" Grid.Column="10" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
 
@@ -88,7 +90,7 @@
             Có kinh nghiệm về ứng dụng tương tự
         </TextBlock>
         <Label Content="0,5" Grid.Row="7" Grid.Column="4" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox Text="{Binding Path=DS[1].XepHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="7" Grid.Column="6" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DS[1].XepHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="7" Grid.Column="6" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
         <TextBox Text="{Binding Path=DS[1].KetQua, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" Grid.Row="7" Grid.Column="8" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
         <TextBox Text="{Binding Path=DS[1].KinhNghiem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" Grid.Row="7" Grid.Column="10" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
 
@@ -97,7 +99,7 @@
             Có kinh nghiệm về hướng đối tượng
         </TextBlock>
         <Label Content="1" Grid.Row="8" Grid.Column="4" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox Text="{Binding Path=DS[2].XepHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="8" Grid.Column="6" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DS[2].XepHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="8" Grid.Column="6" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
         <TextBox Text="{Binding Path=DS[2].KetQua, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" Grid.Row="8" Grid.Column="8" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
         <TextBox Text="{Binding Path=DS[2].KinhNghiem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" Grid.Row="8" Grid.Column="10" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
 
@@ -106,7 +108,7 @@
             Có khả năng lãnh đạo nhóm
         </TextBlock>
         <Label Content="0,5" Grid.Row="9" Grid.Column="4" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox Text="{Binding Path=DS[3].XepHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="9" Grid.Column="6" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DS[3].XepHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="9" Grid.Column="6" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
         <TextBox Text="{Binding Path=DS[3].KetQua, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" Grid.Row="9" Grid.Column="8" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
         <TextBox Text="{Binding Path=DS[3].KinhNghiem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" Grid.Row="9" Grid.Column="10" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
 
@@ -115,7 +117,7 @@
             Tính chất năng động
         </TextBlock>
         <Label Content="1" Grid.Row="10" Grid.Column="4" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox Text="{Binding Path=DS[4].XepHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="10" Grid.Column="6" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DS[4].XepHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="10" Grid.Column="6" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
         <TextBox Text="{Binding Path=DS[4].KetQua, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" Grid.Row="10" Grid.Column="8" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
         <TextBox Text="{Binding Path=DS[4].KinhNghiem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" Grid.Row="10" Grid.Column="10" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
 
@@ -128,7 +130,7 @@
             Độ ổn định của các yêu cầu
         </TextBlock>
         <Label Content="2" Grid.Row="12" Grid.Column="4" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox Text="{Binding Path=DS[5].XepHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="12" Grid.Column="6" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DS[5].XepHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="12" Grid.Column="6" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
         <TextBox Text="{Binding Path=DS[5].KetQua, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" Grid.Row="12" Grid.Column="8" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
         <TextBox Text="{Binding Path=DS[5].KinhNghiem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" Grid.Row="12" Grid.Column="10" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
 
@@ -137,7 +139,7 @@
             Sử dụng các nhân viên làm bán thời gian
         </TextBlock>
         <Label Content="-1" Grid.Row="13" Grid.Column="4" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox Text="{Binding Path=DS[6].XepHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="13" Grid.Column="6" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DS[6].XepHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="13" Grid.Column="6" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
         <TextBox Text="{Binding Path=DS[6].KetQua, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" Grid.Row="13" Grid.Column="8" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
         <TextBox Text="{Binding Path=DS[6].KinhNghiem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" Grid.Row="13" Grid.Column="10" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
 
@@ -146,7 +148,7 @@
             Dùng ngôn ngữ lập trình loại khó
         </TextBlock>
         <Label Content="-1" Grid.Row="14" Grid.Column="4" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <TextBox Text="{Binding Path=DS[7].XepHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="14" Grid.Column="6" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DS[7].XepHang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="14" Grid.Column="6" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
         <TextBox Text="{Binding Path=DS[7].KetQua, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" Grid.Row="14" Grid.Column="8" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
         <TextBox Text="{Binding Path=DS[7].KinhNghiem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" Grid.Row="14" Grid.Column="10" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
 
@@ -166,8 +168,8 @@
         <TextBlock TextWrapping="WrapWithOverflow" Grid.Column="2" Grid.Row="17" HorizontalAlignment="Center" TextAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="Bold">
             Nội suy thời gian lao động (P)
         </TextBlock>
-        <TextBox Text="{Binding Path=P, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource FloatCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="17" Grid.Column="8" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" FontWeight="Bold" IsReadOnly="True"></TextBox>
+        <TextBox Text="{Binding Path=P, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="17" Grid.Column="8" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" FontWeight="Bold" IsReadOnly="True"></TextBox>
 
-        <Button Name="BtnNext" Content="Hoàn Thành" Click="BtnNext_OnClick" Grid.Column="10" Grid.Row="19" FontSize="16" HorizontalAlignment="Stretch" Height="30"></Button>
+        <Button Name="BtnNext" Content="Tiếp theo" Click="BtnNext_OnClick" Grid.Column="10" Grid.Row="19" FontSize="16" HorizontalAlignment="Stretch" Height="30"></Button>
     </Grid>
 </Window>

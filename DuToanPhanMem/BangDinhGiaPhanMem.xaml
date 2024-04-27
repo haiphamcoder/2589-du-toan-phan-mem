@@ -6,6 +6,7 @@
         xmlns:converter="clr-namespace:DuToanPhanMem.Converter"
         mc:Ignorable="d"
         Title="Bảng định giá phần mềm" Height="600" Width="700"
+        WindowStartupLocation="CenterOwner"
         Closing="Window_Closing" >
     <Window.Resources>
         <converter:LongConverter x:Key="LongCv"></converter:LongConverter>
@@ -114,7 +115,7 @@
 
         <Label Content="IV" Grid.Column="1" Grid.Row="13" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14"/>
         <TextBlock TextWrapping="WrapWithOverflow" Grid.Column="2" Grid.Row="13" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14">
-            Mức lượng lạo động bình quân (H)
+            <Hyperlink Name="HlE" Click="HlE_OnClick">Mức lương lao động bình quân (H)</Hyperlink>
         </TextBlock>
         <TextBlock TextWrapping="WrapWithOverflow" Grid.Column="3" Grid.Row="13" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14">
             H: người/giờ

@@ -7,6 +7,8 @@
         xmlns:converter="clr-namespace:DuToanPhanMem.Converter"
         mc:Ignorable="d"
         Title="Bảng hệ số phức tạp KT-CN" Height="700" Width="1000"
+        WindowStartupLocation="CenterOwner"
+        WindowState="Maximized"
         Closing="Window_Closing">
     <Window.Resources>
         <converter:LongConverter x:Key="LongCv"></converter:LongConverter>

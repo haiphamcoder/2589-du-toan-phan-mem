@@ -6,6 +6,7 @@
         xmlns:converter="clr-namespace:DuToanPhanMem.Converter"
         mc:Ignorable="d"
         Title="Dự toán phần mềm" Height="400" Width="665"
+        WindowStartupLocation="CenterOwner"
         ResizeMode="NoResize">
     <Window.Resources>
         <converter:LongConverter x:Key="Converter"></converter:LongConverter>

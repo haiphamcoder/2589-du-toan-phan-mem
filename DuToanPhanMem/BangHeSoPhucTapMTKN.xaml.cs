@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
+﻿using System.ComponentModel;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using DuToanPhanMem.Model;
 
 namespace DuToanPhanMem
@@ -49,7 +38,7 @@ namespace DuToanPhanMem
         private void BtnNext_OnClick(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            
+            preWindow.window5.Show();
         }
 
         private void Window_Closing(object sender, CancelEventArgs e)

@@ -75,6 +75,9 @@
     <Compile Include="BangTinhDiemUseCase.xaml.cs">
       <DependentUpon>BangTinhDiemUseCase.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BangTinhLuongBinhQuan.xaml.cs">
+      <DependentUpon>BangTinhLuongBinhQuan.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Converter\FloatConverter.cs" />
     <Compile Include="Converter\LongConverter.cs" />
     <Compile Include="Model\DiemTacNhan.cs" />
@@ -102,6 +105,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="BangTinhLuongBinhQuan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -118,6 +125,7 @@
   <ItemGroup>
     <Compile Include="Model\ChiPhiPhanMem.cs" />
     <Compile Include="Model\HeSoPhucTapMTKN.cs" />
+    <Compile Include="Model\LuongBinhQuan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

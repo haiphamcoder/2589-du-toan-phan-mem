@@ -3,10 +3,78 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DuToanPhanMem"
+        xmlns:local="clr-namespace:DuToanPhanMem" 
+        xmlns:converter="clr-namespace:DuToanPhanMem.Converter"
         mc:Ignorable="d"
-        Title="BangTinhLuongBinhQuan" Height="450" Width="800">
+        Title="Bảng tính lương bình quân" Height="450" Width="800"
+        WindowStartupLocation="CenterOwner"
+        Closing="Window_Closing">
+    <Window.Resources>
+        <converter:LongConverter x:Key="LongCv"></converter:LongConverter>
+        <converter:FloatConverter x:Key="FloatCv"></converter:FloatConverter>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20px"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20px"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10px"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20px"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20px"/>
+            <ColumnDefinition Width="60px"/>
+            <ColumnDefinition Width="10px"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10px"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10px"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="20px"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock TextWrapping="WrapWithOverflow" Grid.ColumnSpan="9" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold">
+            Bảng tính lương bình quân / người / giờ
+        </TextBlock>
+
+        <Label Content="STT" Grid.Row="3" Grid.Column="1" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+        <Label Content="Mức lương/tháng (đồng)" Grid.Row="3" Grid.Column="3" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+        <Label Content="Số lượng cán bộ" Grid.Row="3" Grid.Column="5" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+        <Label Content="Tổng (đồng)" Grid.Row="3" Grid.Column="7" FontSize="14" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Center"></Label>
+
+        <Label Content="1" Grid.Row="4" Grid.Column="1" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+        <TextBox Text="{Binding Path=DS[0].MucLuong, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="4" Grid.Column="3" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DS[0].SoLuongCB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="4" Grid.Column="5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DS[0].Tong, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="4" Grid.Column="7" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
+
+        <Label Content="2" Grid.Row="5" Grid.Column="1" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+        <TextBox Text="{Binding Path=DS[1].MucLuong, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="5" Grid.Column="3" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DS[1].SoLuongCB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="5" Grid.Column="5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DS[1].Tong, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="5" Grid.Column="7" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
+
+        <Label Content="3" Grid.Row="6" Grid.Column="1" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
+        <TextBox Text="{Binding Path=DS[2].MucLuong, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="6" Grid.Column="3" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DS[2].SoLuongCB, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="6" Grid.Column="5" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30"></TextBox>
+        <TextBox Text="{Binding Path=DS[2].Tong, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="6" Grid.Column="7" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" IsReadOnly="True"></TextBox>
+
+        <Label Content="Tổng chi lương/tháng:" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="5" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+        <TextBox Text="{Binding Path=TongChiLuong, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="7" Grid.Column="7" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" FontWeight="Bold" IsReadOnly="True"></TextBox>
+
+        <Label Content="Mực lương bình quân/người/tháng:" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="5" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+        <TextBox Text="{Binding Path=LuongBinhQuanNguoiThang, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="8" Grid.Column="7" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" FontWeight="Bold" IsReadOnly="True"></TextBox>
+
+        <Label Content="Mực lương bình quân 1 người/1 giờ:" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="5" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Right" FontWeight="Bold"/>
+        <TextBox Text="{Binding Path=LuongBinhQuanNguoiGio, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource LongCv}}" PreviewTextInput="NumberValidationTextBox" Grid.Row="9" Grid.Column="7" HorizontalAlignment="Stretch" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="14" Height="30" FontWeight="Bold" IsReadOnly="True"></TextBox>
+
+        <Button Name="BtnNext" Content="Hoàn thành" Click="BtnNext_OnClick" Grid.Column="7" Grid.Row="11" FontSize="16" Height="30" HorizontalAlignment="Stretch"></Button>
+
     </Grid>
 </Window>
