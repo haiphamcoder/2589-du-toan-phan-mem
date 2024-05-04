@@ -1,5 +1,4 @@
-﻿using JetBrains.Annotations;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -85,8 +84,6 @@ namespace DuToanPhanMem.Model
             LuongBinhQuanNguoiGio = LuongBinhQuanNguoiThang / 20 / 8;
         }
 
-
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -159,12 +156,9 @@ namespace DuToanPhanMem.Model
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
-
-
 }

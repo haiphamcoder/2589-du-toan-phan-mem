@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using JetBrains.Annotations;
 
 namespace DuToanPhanMem.Model
 {
@@ -111,7 +110,6 @@ namespace DuToanPhanMem.Model
                 P = 48;
         }
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -230,7 +228,6 @@ namespace DuToanPhanMem.Model
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

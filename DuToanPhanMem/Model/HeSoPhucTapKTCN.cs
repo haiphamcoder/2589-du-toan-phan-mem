@@ -2,7 +2,6 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using JetBrains.Annotations;
 
 namespace DuToanPhanMem.Model
 {
@@ -93,8 +92,6 @@ namespace DuToanPhanMem.Model
         private int _xepHang;
         private float _ketQua;
 
-        private static readonly float TOLERANCE = 0.05f;
-
         public int ChiSo
         {
             get { return _chiSo; }
@@ -158,7 +155,6 @@ namespace DuToanPhanMem.Model
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
